@@ -4,7 +4,7 @@
 using namespace std;
 class cstring
 {
-    int len;
+    
     char* str;
     public:
     cstring();

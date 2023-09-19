@@ -9,7 +9,6 @@ currentAdress Object of Address Class*/
 using namespace std;
 class cstring
 {
-    int len;
     char* str;
     public:
     cstring();
@@ -18,8 +17,9 @@ class cstring
 };
 cstring::cstring()
 {
-    str=new char[2];
-    str="NAs";
+    str=new char[1];
+    str[0]='\0';
+
 }
 cstring::cstring(const char* str)
 {

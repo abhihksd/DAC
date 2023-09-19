@@ -66,11 +66,26 @@ class Student
     Date doa;    //date of admission
     
     public:
+    void setdata(const char* ,int ,int ,int,int,int ,int);
     void display();
+    Student();
     Student(const char*,int,int,int,int,int,int);
 };
 int Student::cnt=0;
+void Student::setdata(const char* name,int db,int mb,int yb,int da,int ma,int ya)
+{
+    this->name=cstring(name);
+    dob=Date(db,mb,yb);
+    doa=Date(da,ma,ya);
+}
+Student::Student()
+{
+    cnt++;
+    rno=cnt;
+    dob=Date();
+    doa=Date();
 
+}
 Student::Student(const char* name,int db,int mb,int yb,int da,int ma,int ya)
 {
     cnt++;
@@ -82,6 +97,7 @@ Student::Student(const char* name,int db,int mb,int yb,int da,int ma,int ya)
 void Student::display()
 {
     cout<<"--------Details--------\n";
+    cout<<"Roll Number       : \n"<<rno<<endl;
     cout<<"Name             : ";
     name.display();cout<<endl;
     cout<<"Date of birth    : ";
@@ -91,8 +107,24 @@ void Student::display()
 }
 int main()
 {
-    char sr[5]="abhi";
-    Student s1("abhi",16,1,1996,18,9,2023);
-    s1.display();                        
+    char sr[10];
+    int bd,bm,by,ad,am,ay;  
+   // Student s1("abhi",16,1,1996,18,9,2023);
+    Student s[5];
+    for(int i=0;i<5;i++)
+    {
+        
+        cout<<"Enter Name  \n";
+        cin>>sr;
+        cout<<"Date of Birth dd/m/yyy\n";
+        cin>>bd>>bm>>by; 
+        cout<<"Date of Year dd/m/yyyy\n";
+        cin>>ad>>am>>ay;
+        s[i].setdata(sr,bd,bm,by,ad,am,ay);
+    }
+    for(int i=0;i<5;i++)
+    s[i].display();
+
+   // s1.display();                        
     return 0;;
 }

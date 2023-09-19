@@ -33,7 +33,7 @@ cstring::cstring(const char *str)
 }
 void cstring::display()
 {
-    cout << str << endl;
+    cout << str ;
 }
 
 
@@ -64,9 +64,9 @@ class Student
     cstring name;
     Date dob;    //date of birth
     Date doa;    //date of admission
-    void display();
-    public:
     
+    public:
+    void display();
     Student(const char*,int,int,int,int,int,int);
 };
 int Student::cnt=0;
@@ -81,6 +81,7 @@ Student::Student(const char* name,int db,int mb,int yb,int da,int ma,int ya)
 }
 void Student::display()
 {
+    cout<<"--------Details--------\n";
     cout<<"Name             : ";
     name.display();cout<<endl;
     cout<<"Date of birth    : ";
@@ -91,7 +92,7 @@ void Student::display()
 int main()
 {
     char sr[5]="abhi";
-    Student s1(sr,16,1,1996,18,9,2023);
-    s1.display();                        //fix this
+    Student s1("abhi",16,1,1996,18,9,2023);
+    s1.display();                        
     return 0;;
 }

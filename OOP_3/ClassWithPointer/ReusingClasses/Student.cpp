@@ -92,6 +92,6 @@ int main()
 {
     char sr[5]="abhi";
     Student s1(sr,16,1,1996,18,9,2023);
-    s1.display();
+    s1.display();                        //fix this
     return 0;;
 }

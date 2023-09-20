@@ -74,7 +74,7 @@ class Student
 int Student::cnt=0;
 void Student::setdata(const char* name,int db,int mb,int yb,int da,int ma,int ya)
 {
-    this->name=cstring(name);
+this->name=cstring(name);
     dob=Date(db,mb,yb);
     doa=Date(da,ma,ya);
 }
@@ -86,12 +86,12 @@ Student::Student()
     doa=Date();
 
 }
-Student::Student(const char* name,int db,int mb,int yb,int da,int ma,int ya)
+Student::Student(const char* name,int db,int mb,int yb,int da,int ma,int ya):dob(db,mb,yb),doa(da,ma,ya)
 {
     cnt++;
     rno=cnt;
-    dob=Date(db,mb,yb);
-    doa=Date(da,ma,ya);
+   // dob=Date(db,mb,yb);  we have called the constuctor through member initializer list 
+    //doa=Date(da,ma,ya); 
     this->name=cstring(name);
 }
 void Student::display()
@@ -110,7 +110,8 @@ int main()
     char sr[10];
     int bd,bm,by,ad,am,ay;  
    // Student s1("abhi",16,1,1996,18,9,2023);
-    Student s[5];
+    Student *s;
+    s=new Student[5];
     for(int i=0;i<5;i++)
     {
         

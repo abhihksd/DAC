@@ -25,11 +25,14 @@ int main()
 {
     calc c1;
    cout<< c1.add()<<endl;
+   
     cout<<c1.sub()<<endl;
     cout<<c1.multi()<<endl;
     cout<<c1.div()<<endl;
     c1.Math1::calArea(5);cout<<endl;
     c1.Math2::calArea(10);
+
+    
     return 0;
 
 }

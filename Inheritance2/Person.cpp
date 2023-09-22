@@ -13,7 +13,7 @@ class Person{
     }
     void display()
     {
-        cout<<name<<endl<<age;
+        cout<<name<<endl<<age<<endl;
     }
 };
 class Emp:public Person
@@ -32,7 +32,7 @@ class Emp:public Person
     {
         cout<<empid<<endl;
         Person::display();
-        cout<<salary;
+        cout<<salary<<endl;
     }
 };
 
@@ -51,12 +51,12 @@ class WageEmp:public Emp{
     void display()
     {
         Emp::display();
-        cout<<hrs<<endl<<rate;
+        cout<<hrs<<endl<<rate<<endl;
     }
     void calsal()
     {
         double sal=salary+(hrs*rate);
-        cout<<sal;
+        cout<<sal<<endl;
     }
 };
 class SalesPerson:public Emp
@@ -81,7 +81,7 @@ class SalesPerson:public Emp
     void display()
     {
         Emp::display();
-        cout<<sales<<endl<<com;
+        cout<<sales<<endl<<com<<endl;
     }
 
 };
@@ -106,8 +106,8 @@ class Manager:public Emp
     }
     void display()
     {
-        cout<<Ta<<endl<<HRA;
-        Emp:display();
+        cout<<Ta<<endl<<HRA<<endl;
+        Emp::display();
     }
 };
 

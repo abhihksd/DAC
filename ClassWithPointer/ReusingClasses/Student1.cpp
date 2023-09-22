@@ -36,7 +36,7 @@ class Student
 
 public:
     Student();
-    Student(char, int, int, int, int, int, int);
+    Student(char *, int, int, int, int, int, int);
     void display();
     void setname(char *);
     void setdob(Date &);
@@ -50,8 +50,9 @@ Student::Student()
     strcpy(name, "NA");
     // dob and doa are already intialized at the time of declaration of objects
 }
-Student::Student(char nm, int db, int mb, int yb, int da, int ma, int ya) : dob(db, mb, yb), doa(da, ma, ya)
+Student::Student(char *nm, int db, int mb, int yb, int da, int ma, int ya) : dob(db, mb, yb), doa(da, ma, ya)
 {
+    strcpy(name,nm);
     cnt++;
     rno = cnt;
 }

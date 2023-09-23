@@ -114,13 +114,13 @@ class Manager:public Emp
 int main()
 {
     WageEmp w1(6, 12,101,10000,"Abhi",20);
-    w1.display();
-    w1.calsal();
+    w1.display();cout<<endl;
+    w1.calsal();cout<<endl;
     SalesPerson s1(5,10,102,20000,"Abhi2",21);
-    s1.display();
-    s1.calsal();
+    s1.display();cout<<endl;
+    s1.calsal();cout<<endl;
     Manager m1(5000,20000,103,500000,"Abhi3",40);
-    m1.display();
-    m1.calsal();
+    m1.display();cout<<endl;
+    m1.calsal();cout<<endl;
     return 0;
 }

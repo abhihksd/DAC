@@ -8,6 +8,7 @@ class cstring
 
 public:
     cstring();
+
     cstring(const char *);
     ~cstring(); // destructor
     void display();
@@ -16,6 +17,7 @@ public:
 cstring::cstring(cstring &ref)
 {
     this->len=ref.len;
+    
     this->str=new char[this->len+1];
     strcpy(this->str,ref.str);
 }

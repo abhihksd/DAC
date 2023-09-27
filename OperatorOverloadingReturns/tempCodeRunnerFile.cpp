@@ -1,0 +1,4 @@
+  // ~cstring()
+    // {
+    //     delete[] str;
+    // }

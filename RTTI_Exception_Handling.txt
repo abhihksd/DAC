@@ -1,0 +1,26 @@
+1. Declare variable with built in data type like(int,char,float,char[]).
+   Declare class and check it's data type at runtime.
+   a.use typeid operator and check data type of all variable at runtime.
+   b.In same cpp file write note on typeinfo class typeid operator.
+
+2. Create class Employee with data type name.
+   Derive classes Programmer,DataBaseAdministrator,SystemAdministrator.
+   a. all classes has display and test functions.
+   a. programmer class has function Codding();
+   b. DataBaseAdministrator class has function CreateDataBase();
+   c. SystemAdministrator class has function SystemUpdate();
+   d. Create Array of Employee Pointer with size 5.
+   e. Check name of all classes  at runtime.
+   g. Excute class specific function from respective classes.
+  
+  * Pass this array to global function Check().
+3. Write program to demostrate use of Static cast.
+4. Write program to demostrate use of const cast.
+
+************ Exception Handling ***********
+1. Accept two  numbers from user and print addtion,subtraction,multiplication,division.
+   user exception handling for divid by zero	.
+2. Implement exception handling for cStack class.
+   for Push and Pop.
+
+

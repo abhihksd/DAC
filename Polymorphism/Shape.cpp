@@ -86,7 +86,6 @@ int main()
     cout << endl;
     Triangle t1;
     ptr[2] = &t1;
-
     ptr[2]->calcArea();
     ptr[2]->calcParam();
 }

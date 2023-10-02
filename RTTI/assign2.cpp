@@ -53,6 +53,7 @@ int main()
     //make employee into programmer
     Programmer *p=dynamic_cast<Programmer*>(e[0]);
     p->codding();
+    
     DataBaseAdmin *d=dynamic_cast<DataBaseAdmin*>(e[1]);
     d->createDatabase();
     SystemAdmin *s=dynamic_cast<SystemAdmin*>(e[2]);

@@ -14,5 +14,6 @@ public class FruitDemo {
         v = sc.next().charAt(0);
         Fruit f1 = new Fruit(fn, is, v);
         f1.display();
+        sc.close();
     }
 }

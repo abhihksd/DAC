@@ -1,0 +1,20 @@
+1. Create a file by name fruits and add the following data in it. Perform following commands on it.
+   apple
+   apple
+   apple
+   banana
+   mango
+   mango
+   pineapple  
+   grapes
+   a.$uniq fruits.txt
+   b.$uniq -c fruits.txt
+2. Accept 2 numbers from user and print the smallest number.
+3. Create following data file by name Employee. File contains id-no of a person , name and commission earned
+   1425  Ravi 15.65
+   4320  Anuja 26.27
+   6830  Sita 36.15
+   1450  Raju 21.86
+   Write a menu driven program which accepts column number from user and print the sorted data according to the column.
+4. Write a menu driven program to design a calculator to add/sub/mul/div for 2 numbers. Accept numbers from users. 
+ 

@@ -17,5 +17,8 @@ public abstract class Emp extends Person {
 		return super.toString()+"\nEmpid: "+ empid+"\nSalary :"+salary;
 	}
 	public abstract double calSal();
+	public int getEmpid() {
+		return empid;
+	}
 
 }

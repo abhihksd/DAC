@@ -1,0 +1,11 @@
+1. Implement Following options in file
+  1. Add records
+  2. Dipslay Records
+  3. Search specific record;
+  4. Count number of records.
+  5. Modify records
+
+************* STL *************
+1. Create vector for storing 10 prime numbsers.
+2. Create list for storing 10 city names. Accept values from user.
+3. Create stack for storing 10 even numbers.  

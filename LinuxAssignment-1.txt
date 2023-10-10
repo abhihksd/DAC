@@ -1,0 +1,59 @@
+1. Display only the day of system date.
+
+2. Display only the month of system date.
+
+3. Execute the command to check hidden files.
+
+4. Execute command ls -l and study it in details again.
+
+5. Create file f1 of size 0 bytes.
+
+6. Create file f11 f12 f13 of size 0 bytes using single command.
+
+7. List all the files in your current directory.
+
+8. Create file Country and store names of 5 countries.Use cat command.
+
+9. Display contents of file Country.
+
+10. Create another file by name MoreCountries and store 5 more country names in it.
+
+11. Display contents of MoreCountries.
+
+12. Copy contents of file Country in another file by name NewCountry.
+
+13. See directory listing and check all file names you have created.
+
+14. Rename file Country to CountryList and check in directory listing if file by name Country exsists.
+
+15. Move contents of file MoreCountries in MoreCountries1. Check directory listing.
+
+16. Delete file f12.
+
+17. Delete file f11 and f13 using single command.
+
+18. Clear the screen.
+
+19. Diaplay contents of both the files NewCountry and MoreCountries1 using single command.
+
+20. Add 2 more country names in file NewCountry.
+
+21. Copy contents of file NewCountry at the end of MoreCountries1.
+
+22. Execute command whoami.
+
+23. Execute man command for ls.
+
+24. Create directory CDAC.
+
+25. Change directory to CDAC.
+
+26. Execute command pwd and see the path.
+
+27. Create files Trainers, Students and Admin with some meaningful entries under directory CDAC.
+
+28. Check directory listing.
+
+29. Change your directory one level back.
+
+30. Check output of pwd and ls commands.   

@@ -16,7 +16,7 @@ public class SavingsAccount extends Account {
 			balance-=amt;
 		else
 			System.out.println("Gareebi");
-	}
+	}													
 
 	public double getBalance()
 	{

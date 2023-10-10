@@ -1,0 +1,4 @@
+linux answers 
+date +%a =gives the day 
+date +%a%b==gives only day and month
+

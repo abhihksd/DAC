@@ -9,7 +9,7 @@ public class CheckFile {
 		String filename=br.readLine();
 		br.close();
 		String path="C:\\Users\\smshu\\OneDrive\\Desktop\\DAC\\javaProgs\\io_filehandling\\src\\io";
-		File f=new File(filename);
+		File f=new File(path+"\\"+filename);
 		if(f.isDirectory())
 		{
 			System.out.println("It is a directory");
@@ -23,8 +23,9 @@ public class CheckFile {
 		{
 			System.out.println("It is a file");
 			System.out.println(f.length());
-			if(f.length()>10)
+			if(f.length()<100)
 			{
+				System.out.println("Using buffered reader");
 				BufferedReader br1=new BufferedReader(new FileReader((path+"\\"+f.getName())));
 				String str;
 				while((str=br1.readLine())!=null)
@@ -35,10 +36,11 @@ public class CheckFile {
 			}
 			else
 			{
+				System.out.println("Using filestream");
 				InputStream is=new FileInputStream(path+"\\"+f.getName());
 				int i;
 				while((i=is.read())!=-1)
-					System.out.println((char)i);
+					System.out.print((char)i);
 				is.close();
 			}
 			

@@ -5,6 +5,7 @@ public class EmpInterfaceDemo  {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Emp [] allemps=new Emp[3];
+		
 		allemps[0]=new SalesManager("Abhi",12,12,2012,1001,10000,5000,10000,30);
 		allemps[1]=new Programmer("NOTAbhi",12,1,2000,1002,20000,30,500,5);
 		allemps[2]=new Admin("WhoAbhi",1,1,2000,1003,5000,500);

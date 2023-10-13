@@ -1,5 +1,5 @@
 package utility;
-
+import exceptions.InvalidColorException;
 public class ColorPoint extends Point {
 	String color;
 	static String [] valid_colors;
@@ -16,7 +16,7 @@ public class ColorPoint extends Point {
 	{
 		color="white";
 	}
-	public ColorPoint(int x, int y, String color) {
+	public ColorPoint(int x, int y, String color) throws InvalidColorException {
 		super(x, y);
 		boolean flag=false;
 		for(String s: valid_colors)
@@ -29,7 +29,8 @@ public class ColorPoint extends Point {
 			}
 		}
 		if(!flag)
-		this.color="white";
+			throw new InvalidColorException();
+//		this.color="white";
 		
 	}
 	public String toString()

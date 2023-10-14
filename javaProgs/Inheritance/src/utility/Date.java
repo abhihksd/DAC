@@ -1,6 +1,6 @@
 package utility;
-
-public class Date {
+import java.io.Serializable;
+public class Date implements Serializable {
 	 private int dd,mm,yy;
 	  public void showDate()
 	   {	
@@ -24,6 +24,12 @@ public class Date {
 	    this.mm=d.mm;
 	    this.yy=d.yy;
 	  }
+	public int getYy() {
+		return yy;
+	}
+	public void setYy(int yy) {
+		this.yy = yy;
+	}
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub

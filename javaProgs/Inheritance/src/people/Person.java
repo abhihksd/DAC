@@ -1,6 +1,7 @@
 package people;
 import utility.Date;
-public class Person {
+import java.io.Serializable;
+public class Person implements Serializable{
 	private String name;
 	private Date dob;
 	public Person(String name, int dd,int mm,int yy) {
@@ -12,6 +13,10 @@ public class Person {
 		// TODO Auto-generated constructor stub
 		this.dob=new Date();
 		this.name="NA";
+	}
+	public int getYear()
+	{
+		return dob.getYy();
 	}
 	@Override
 	public String toString() {

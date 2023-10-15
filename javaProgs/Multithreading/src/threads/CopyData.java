@@ -3,10 +3,12 @@ package threads;
 import java.io.*;
 
 public class CopyData implements Runnable {
-	Thread t;
+private	Thread t;
 	String f1, f2;
-
+	
+int i;
 	public CopyData(String f1, String f2) {
+		
 		this.f1 = f1;
 		this.f2 = f2;
 		t = new Thread(this);

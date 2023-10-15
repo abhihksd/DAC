@@ -1,6 +1,7 @@
 package multithreadular;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 import threads.CopyData;
 public class CopyDataThread {

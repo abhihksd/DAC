@@ -1,0 +1,45 @@
+Enums :
+Need : 
+"In Java, enum was introduced to replace the use of int constants."
+class Size {
+   public final static int SMALL = 1;
+   public final static int MEDIUM = 2;
+   public final static int LARGE = 3;
+   public final static int EXTRALARGE = 4;
+}
+Here, the problem arises if we print the constants. It is because only the number is printed which might not be helpful."
+So, instead of using int constants, we can simply use enums
+Suppose we have used a collection of int constants. So, instead of using int constants, we can simply use enums. For example,"
+enum Size {
+   SMALL, MEDIUM, LARGE, EXTRALARGE
+}
+Enum provides compile-time type safety.
+If we declare a variable of the Size type. For example,
+Size size;
+Here, it is guaranteed that the variable will hold one of the four values.
+
+
+
+Enums always extends the java.lang.Enum class. 
+1.public,protected constructor not allowed, private and default allowed
+2.If value is passed to the enum constant, respective constructor is needed
+3.When enum constant is created, respective constructor gets called
+4.The enum constants are usually represented in uppercase
+5.We can create variables of enum types
+6.Enum variable can only be assigned values amongst enum constants
+7.enum types are considered to be a special type of class
+8.An enum class can include methods and fields just like regular classes.
+9.When we create an enum class, the compiler will create instances (objects) of each enum constants. Also, all enum constant is always public static final by default.
+10.The compiler automatically creates instances for each enum constants.
+11.The ordinal() method returns the position of an enum constant.
+12.The compareTo() method compares the enum constants based on their ordinal value.
+13.The toString() method returns the string representation of the enum constants. It can be overridden to return diff value
+14.The name() method returns the defined name of an enum constant in string form. The name() method is final.
+15.The valueOf() method takes a string and returns an enum constant having the same string name. 
+16.The values() method returns an array of enum type containing all the enum constants.
+17.Since enum types ensure that only one instance of the constants exist in the JVM, we can safely use the == operator to compare two variables, 
+18.We can use enum types in switch statements.
+19.The EnumSet is an abstract class that has two implementations, RegularEnumSet and JumboEnumSet, used for representation of a particular Set of Enum constants,
+
+
+

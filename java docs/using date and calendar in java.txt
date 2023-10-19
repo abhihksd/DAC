@@ -1,0 +1,99 @@
+java.util.Date
+
+The java.util.Date class represents a particular moment in time, with millisecond precision since the 1st of January 1970 00:00:00
+It's instance can be created by 2 ways :
+Date date = new Date();
+This creates new Date object with time set to current time
+long timestamp = 1532516399000; // 25 July 2018 10:59:59 UTC
+Date date = new Date(timestamp);
+Many other constructors present are deprecated now from java 8
+Once we initialize it, we can change its internal value. For example, we can call the setTime method:
+example : date.setTime(0); // 01 January 1970 00:00:00
+
+Most modern operating systems use 1 day = 24h x 60m x 60s = 86400 seconds, which as we can see, doesn't take the “leap second” into account.
+With the introduction of Java 8, java.time package should be used.
+
+
+java.sql.Date
+The java.sql.Date extends java.util.Date class.
+Its main purpose is to represent SQL DATE, which keeps years, months and days. No time data is kept.
+In fact, the date is stored as milliseconds since the 1st of January 1970 00:00:00 GMT and the time part is normalized, i.e. set to zero.
+
+
+java.util.Calendar & java.util.GregorianCalendar
+The Calendar class provides support for:
+
+maintaining a set of calendar fields such as YEAR, MONTH, DAY_OF_MONTH, HOUR, MINUTE, SECOND, MILLISECOND; and
+manipulating these calendar fields, such as getting the date of the previous week, roll forward by 3 days.
+Calendar provides internationalization support.
+Calendar is a abstract class, use the static method Calendar.getInstance() to instantiate.
+
+The most important method in Calendar is get(int calendarField), which produces an int.
+The calendarField are defined as static constant and includes:
+get(Calendar.DAY_OF_WEEK): returns 1 (Calendar.SUNDAY) to 7 (Calendar.SATURDAY).
+get(Calendar.YEAR): year
+get(Calendar.MONTH): returns 0 (Calendar.JANUARY) to 11 (Calendar.DECEMBER).
+get(Calendar.DAY_OF_MONTH), get(Calendar.DATE): 1 to 31
+get(Calendar.HOUR_OF_DAY): 0 to 23
+get(Calendar.MINUTE): 0 to 59
+get(Calendar.SECOND): 0 to 59
+get(Calendar.MILLISECOND): 0 to 999
+and few more
+
+Calendar has these setters and operations:
+void set(int calendarField, int value)
+void set(int year, int month, int date)
+void set(int year, int month, int date, int hour, int minute, int second)
+void add(int field, int amount): Adds or subtracts the specified amount of time to the given calendar field, based on the calendar's rules.
+void roll(int calendarField, boolean up): Adds or subtracts (up/down) a single unit of time on the given time field without changing larger fields.
+void roll(int calendarField, int amount): Adds the specified (signed) amount to the specified calendar field without changing larger fields.
+
+Other frequently-used methods are:
+Date getTime(): return a Date object based on this Calendar's value.
+void setTime(Date date)
+long getTimeInMills(): Returns this Calendar's time value in milliseconds.
+void setTimeInMillis(long millis)
+void setTimeZone(TimeZone value)
+
+
+
+new APIs for Date and Time
+Java 8 introduced new APIs for Date and Time to address the shortcomings of the older java.util.Date and java.util.Calendar.
+
+Issues With the Existing Date/Time APIs
+Thread safety – The Date and Calendar classes are not thread safe, leaving developers to deal with the headache of hard-to-debug concurrency issues and to write additional code to handle thread safety. On the contrary, the new Date and Time APIs introduced in Java 8 are immutable and thread safe, thus taking that concurrency headache away from developers.
+API design and ease of understanding – The Date and Calendar APIs are poorly designed with inadequate methods to perform day-to-day operations. The new Date/Time API is ISO-centric and follows consistent domain models for date, time, duration and periods. There are a wide variety of utility methods that support the most common operations.
+ZonedDate and Time – Developers had to write additional logic to handle time-zone logic with the old APIs, whereas with the new APIs, handling of time zone can be done with Local and ZonedDate/Time APIs.
+
+The most commonly used classes are LocalDate, LocalTime and LocalDateTime. As their names indicate, they represent the local date/time from the context of the observer.
+Use these classes when time zones are not required to be explicitly specified in the context.
+An instance of current date can be created from the system clock:
+LocalDate localDate = LocalDate.now();
+The LocalDate provides various utility methods to obtain a variety of information.
+LocalDate tomorrow = LocalDate.now().plusDays(1);
+LocalDate previousMonthSameDay = LocalDate.now().minus(1, ChronoUnit.MONTHS);
+DayOfWeek sunday = LocalDate.parse("2016-06-12").getDayOfWeek();
+int twelve = LocalDate.parse("2016-06-12").getDayOfMonth();
+boolean leapYear = LocalDate.now().isLeapYear();
+
+Working With LocalTime
+The LocalTime represents time without a date.
+Similar to LocalDate, we can create an instance of LocalTime from the system clock or by using parse and of methods.
+An instance of current LocalTime can be created from the system clock:
+LocalTime now = LocalTime.now();
+LocalTime sixThirty = LocalTime.parse("06:30");
+LocalTime sixThirty = LocalTime.of(6, 30);
+LocalTime sevenThirty = LocalTime.parse("06:30").plus(1, ChronoUnit.HOURS);
+int six = LocalTime.parse("06:30").getHour();
+boolean isbefore = LocalTime.parse("06:30").isBefore(LocalTime.parse("07:30"));
+LocalTime maxTime = LocalTime.MAX
+
+Working With LocalDateTime
+LocalDateTime is used to represent a combination of date and time
+LocalDateTime.now();
+LocalDateTime.of(2015, Month.FEBRUARY, 20, 06, 30);
+LocalDateTime.parse("2015-02-20T06:30:00");
+localDateTime.plusDays(1);
+localDateTime.minusHours(2);
+localDateTime.getMonth();
+

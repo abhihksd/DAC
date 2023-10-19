@@ -6,6 +6,7 @@ public class StringOps implements StringOperation {
 
 	@Override
 	public void reverse(String str) {
+		String c1="";
 		char[] copy = new char[str.length()];
 		// TODO Auto-generated method stub
 		for (int i = 0; i < str.length(); i++) {
@@ -14,7 +15,7 @@ public class StringOps implements StringOperation {
 		for (int i = copy.length - 1; i >= 0; i--) {
 			str += copy[i];
 		}
-		System.out.println(str);
+		System.out.print(str);
 
 	}
 

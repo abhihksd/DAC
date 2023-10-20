@@ -1,0 +1,133 @@
+create table Salesman(sid int(4),sname varchar(20),city varchar(20),experience int(4));
+insert into Salesman values(10,'Rajesh','Mumbai',5);
+insert into Salesman values(11,'Seema','Pune',8);
+insert into Salesman values(12,'Shailesh','Nagpur',7);
+insert into Salesman values(13,'Rakhi','Pune',2);
+
+create table customer1 as select * from customer;
+
+1. select vid as 'Vehicle id',vname as 'vehicle name',price,details from vehicle;
+
++------------+---------------+--------+---------------------------------+
+| Vehicle id | vehicle name  | price  | details                         |
++------------+---------------+--------+---------------------------------+
+|          3 | Yamaha        | 160000 | Sturdy and good milage          |
+|          4 | i-10          | 300000 | Good small car                  |
+|          5 | WaganR        | 250000 | Good milage car                 |
+|          6 | Hero Splendor |  75000 | Best Bike                       |
+|          7 | Royal Enfield | 190000 | a royal bike                    |
+|          1 | Activa        |  80000 | Two wheeler.Sturdy.Milage 30 km |
+|          2 | Santro        |  95000 | Product of Hyandai              |
++------------+---------------+--------+---------------------------------+
+2. select sname from Salesman where city='Pune';
++-------+
+| sname |
++-------+
+| Seema |
+| Rakhi |
++-------+
+
+3. delete from customer where area='Pimpri';
+
+4. select details from vehicle where vname='Hero Splendor';
++-----------+
+| details   |
++-----------+
+| Best Bike |
++-----------+
+
+5.  update vehicle 
+	set price= 80000
+	where price= 75000;
+
+6. create table customer1 as select * from customer;
+   create table salesman1 as select * from Salesman;
+
+7. delete from customer;
+8. drop table Salesman;
+9. select vid,vname,price,details, price-discount as 'total price' from vehicle;
+
+10. select * from vehicle where price<= 100000;
++------+---------------+-------+----------+--------+---------------------------------+
+| vid  | vname         | price | discount | milage | details                         |
++------+---------------+-------+----------+--------+---------------------------------+
+|    6 | Hero Splendor | 80000 |        9 |     65 | Best Bike                       |
+|    1 | Activa        | 80000 |       10 |     35 | Two wheeler.Sturdy.Milage 30 km |
+|    2 | Santro        | 95000 |       20 |     20 | Product of Hyandai              |
++------+---------------+-------+----------+--------+---------------------------------+
+3 rows in set (0.00 sec)
+
+11. select * from salesman1 where experience>5;
+
++------+----------+--------+------------+
+| sid  | sname    | city   | experience |
++------+----------+--------+------------+
+|   11 | Seema    | Pune   |          8 |
+|   12 | Shailesh | Nagpur |          7 |
++------+----------+--------+------------+
+
+12.  create table employee ( eno int(4), ename varchar(20), basic int(5), incentives int(5));
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| eno        | int         | YES  |     | NULL    |       |
+| ename      | varchar(20) | YES  |     | NULL    |       |
+| basic      | int         | YES  |     | NULL    |       |
+| incentives | int         | YES  |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+insert into employee values(1,'Rajesh',20000,1500),(2,'Sarita',25000,1000),(3,'Meera',15000,3000),(4,'Jitesh',30000,500),(5,'Ramesh',12000,3000);
+
++------+--------+-------+------------+
+| eno  | ename  | basic | incentives |
++------+--------+-------+------------+
+|    1 | Rajesh | 20000 |       1500 |
+|    2 | Sarita | 25000 |       1000 |
+|    3 | Meera  | 15000 |       3000 |
+|    4 | Jitesh | 30000 |        500 |
+|    5 | Ramesh | 12000 |       3000 |
++------+--------+-------+------------+
+
+
+12.1  select * from employee where basic>15000;
++------+--------+-------+------------+
+| eno  | ename  | basic | incentives |
++------+--------+-------+------------+
+|    1 | Rajesh | 20000 |       1500 |
+|    2 | Sarita | 25000 |       1000 |
+|    4 | Jitesh | 30000 |        500 |
++------+--------+-------+------------+
+
+12.2  update employee set incentives=1000 where ename='Jitesh';
+
++------+--------+-------+------------+
+| eno  | ename  | basic | incentives |
++------+--------+-------+------------+
+|    1 | Rajesh | 20000 |       1500 |
+|    2 | Sarita | 25000 |       1000 |
+|    3 | Meera  | 15000 |       3000 |
+|    4 | Jitesh | 30000 |       1000 |
+|    5 | Ramesh | 12000 |       3000 |
++------+--------+-------+------------+
+
+12.3  update employee set basic= basic+(basic*0.05) where salary<2000;
+
+12.4 insert into employee(eno,ename,basic)values(20,'Ajay',16000);
++------+--------+-------+------------+
+| eno  | ename  | basic | incentives |
++------+--------+-------+------------+
+|    1 | Rajesh | 21000 |       1500 |
+|    2 | Sarita | 26250 |       1000 |
+|    3 | Meera  | 15750 |       3000 |
+|    4 | Jitesh | 31500 |       1000 |
+|    5 | Ramesh | 12600 |       3000 |
+|   20 | Ajay   | 16000 |       NULL |
++------+--------+-------+------------+
+
+12.5 delete from employee where ename='Meera';
+
+12.6 alter table employee add column job varchar(12);
+
+12.7 update employee set job='Head Clerk where ename='Ramesh';
+12.8 update employee set job='Analyist' where ename='Jitesh' or ename='Sarita';
+12.9

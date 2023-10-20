@@ -1,0 +1,12 @@
+create table vehicle ( vid int(4), 
+			vname varchar(20),
+			price int(4),
+			discount int(4),
+			milage int(4),
+			details varchar(40)
+		
+		);
+
+insert into vehicle values( 1, 'Activa', 80000,10,35,'Two wheeler.Sturdy.Milage 30 km);
+
+ insert into vehicle values (2 , 'Santro', 95000,20,20,'Product of Hyandai' );

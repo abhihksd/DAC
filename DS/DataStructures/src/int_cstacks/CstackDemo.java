@@ -23,7 +23,12 @@ public class CstackDemo {
 			}
 			case 2: 
 			{
-				System.out.println("Deleted element is: "+c.pop());
+				if(c.pop()==-999)
+				{
+					System.out.println("Stack is empty");
+				}else{
+				System.out.println("Deleted element is: "+c.pop());}
+				break;
 			}
 			case 3:
 			{

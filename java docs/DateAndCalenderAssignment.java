@@ -62,8 +62,8 @@ public class DateAndCalenderAssignment {
 
 
 
-create collection
-which store string
-in order of lesser no of word to high no of words
-if two have same number
-then they should arrenge alphabatically
+// create collection
+// which store string
+// in order of lesser no of word to high no of words
+// if two have same number
+// then they should arrenge alphabatically

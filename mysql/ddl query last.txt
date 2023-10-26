@@ -1,0 +1,5 @@
+select cv.tid,cv.custid,c.cname,v.vid,v.vname,s.sid,s.sname,cv.buy_price from cust_vehicle cv, customer1 c ,vehicle v, salesman1 s where cv.custid=c.custid and cv.vid=v.vid  and cv.sid=s.sid;
+
+insert into vehicle(vname,price,discount,milage,details) values('Passion',90000,null,50,'for passionate riders'),
+('Honda City',140000,null,20,'best in honda world'),
+('TVS icube',1400000,null,40,'best in new world');

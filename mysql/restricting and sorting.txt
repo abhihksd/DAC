@@ -1,0 +1,47 @@
+2. First we create course table
+
+create table course (cid varchar(5), 
+		    cname varchar(20) unique not null,
+		    fees int default 5000,	
+		    constraint pk_cid primary key(cid)
+);
+
+Then we create trainer table
+
+create table trainer(tid varchar(5) , 
+			tname varchar(20) not null, 
+			cid varchar(5), 
+			salary int default 20000,
+			experience float(5,2) check(experience>=10),
+			constraint pk_tid primary key(tid),
+			constraint fk_cid foreign key(cid) references course(cid) on delete cascade
+);
+
+adding data in tables;
+insert into course values('c2','Linux',8000),
+                         ('c3','Data Structure',10000),
+			('c4','Python',12000),
+			('c5','Dot Net',null);
+insert into trainer values('t1','Amit','c2',10000,11),
+('t2','Rajan','c1',20000,10),
+('t3','Shruti','c2',10000,20),
+('t4','Arti','c2',50000,25),
+('t5','Sameer','c3',40000,15),
+('t6','Sanjay',null,10000,10),
+('t7','Soha',null,10000,10);
+
+
+3. create table cust_vehicle(tid int,
+			custid int not null,
+			vid int not null,
+			sid int not null,
+			buy_price int not null check(buy_price>0),
+			constraint pk_tid primary key(tid)
+			
+);
+
+insert into cust_vehicle values(1,1,1,10,75000),
+(2,1,2,10,7900000),
+(3,2,3,11,80000),
+(4,3,3,11, 75000),
+(5,3,2,10,800000);

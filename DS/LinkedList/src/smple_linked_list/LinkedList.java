@@ -54,13 +54,24 @@ public class LinkedList {
 			Node move=head;
 			while(move.link!=null)
 			{
-				if(move.data<data && move.link.data>data)
+				if(move.data<=data)
 				{
-					record.link=move.link;
-					move.link=record.link;
+					if(move.link.data>data)
+					{
+						record.link=move.link;
+						move.link=record;
+						flag=false;
+						break;
+					}
+				}
+				else if(move.data>data) {
+					record.link=move;
+					head=record;
 					flag=false;
+					break;
 					
 				}
+				
 				move=move.link;
 			}
 			if(flag)

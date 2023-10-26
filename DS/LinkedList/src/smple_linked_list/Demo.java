@@ -16,7 +16,7 @@ public class Demo {
 		int ch;
 		do
 		{
-			System.out.println("\n1. Add Node \n2. display \n0. Exit.\nEnter the choice");
+			System.out.println("\n1. Add Node \n2. display \n3. sorted  \n0. Exit.\nEnter the choice");
 			ch=sc.nextInt();
 			switch (ch) {
 			case 1:

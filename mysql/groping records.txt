@@ -1,0 +1,14 @@
+1. select avg(sal) from emp;
+2. select avg(sal) from emp where deptno=10;
+3. select max(sal), deptno from emp group by deptno;
+4. select count(*),deptno from emp where group by deptno;  
+
+5. select count(job) from emp where job='manager';
+6. 
+8. select job ,count(job) from emp group by job having count(job)>3;
++----------+------------+
+| job      | count(job) |
++----------+------------+
+| CLERK    |          4 |
+| SALESMAN |          4 |
++----------+------------+

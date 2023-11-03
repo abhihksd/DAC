@@ -85,7 +85,7 @@ public class LinkedList {
 			Node tag = temp.next;
 			while (tag != null) {
 				if (temp.data > tag.data) {
-					int t = temp.data;
+					int t = temp.data;     //swapping the data
 					temp.data = tag.data;
 					tag.data = t;
 				}
@@ -162,9 +162,18 @@ public class LinkedList {
 		addBeg(data);
 		addEnd(data);
 	}
-	
-	public void deletemid()
+	public void findMid()
 	{
-		
+		Node fast=head,slow=head;
+		while(fast.next.next!=null)
+		{
+			slow=slow.next;
+			fast=fast.next.next;
+		}
+		System.out.println("The mid is: "+slow.data);
 	}
+	
+	
+	
+	
 }

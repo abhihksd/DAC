@@ -78,6 +78,6 @@ public class LinkedList {
 				move.link=record;
 		}
 	}
-	
+
 
 }

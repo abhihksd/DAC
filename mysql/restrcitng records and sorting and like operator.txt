@@ -1,0 +1,39 @@
+1. select e.*,dname from emp e ,dept d where e.deptno=d.deptno and sal>2000;
+
+
+2. selct empno,name,dept from emp where mgr=7698;
+
+3. select distinct job from emp; 
+4. 
+
+16. select * from emp where dept=20 or dept=30 and comm=null;
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+|
+|
+|
+|
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+like operator quetions
+
+1. 
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+regular expression questions
+1. select ename from emp where regexp_like(ename,'^a.*');
+
+2. select ename from emp where regexp_like(ename,'.*r$');
+
+3. select ename from emp where regexp_like(ename,'.*n.*');
+
+4. select ename from emp where regexp_like(ename,'^[a m].*'); 
+
+5. select ename from emp where regexp_like(ename,'^..n.*');
+
+6. select ename from emp where regexp_like(ename,'^a.*n$|^m.*r$|^s.*h$');
+
+7.select ename from emp where regexp_like(ename,'^[^f]'); 
+
+8. select ename from emp where regexp_like(ename, '^m.l.*r$');
+

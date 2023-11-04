@@ -1,14 +1,14 @@
 package queues;
 
-public class Int_Queue {
+public class BookQ {
 	int front;
 	int rear;
 	int size;
-	int[] arr;
+	Book[] arr;
 
-	public Int_Queue(int size) {
+	public BookQ(int size) {
 		this.size = size;
-		arr = new int[this.size];
+		arr = new Book[this.size];
 		front = rear = -1;
 	}
 
@@ -25,7 +25,7 @@ public class Int_Queue {
 		return false;
 	}
 
-	public void enQueue(int data) {
+	public void enQueue(Book data) {
 		if (!isFull()) {
 			if (front == -1) {
 				front = 0;
@@ -36,8 +36,8 @@ public class Int_Queue {
 		}
 	}
 
-	public int deQueue() {
-		int data = -999;
+	public Book deQueue() {
+		Book data=null;
 		if (!isEmpty()) {
 			data = arr[front];
 			if (front == rear)
@@ -50,13 +50,11 @@ public class Int_Queue {
 	}
 
 	public void display() {
-		if (!isEmpty()) {
+		
 			for (int i = front; i <= rear; i++) {
 				System.out.print(arr[i] + " ");
 			}
 			System.out.println("");
-		} else
-			System.out.println("Stack is empty");
-
+		
 	}
 }

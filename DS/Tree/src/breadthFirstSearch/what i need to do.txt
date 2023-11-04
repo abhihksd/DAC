@@ -1,0 +1,9 @@
+TreeNode   integer data , TreeNode left, right;
+
+QNode     TreeNode data,QNode next
+
+BinaryTree class  TreeNode root,
+
+Queue Class QNode front, rear
+
+Demo class TreeNode to enter data,Then QNode to bfs

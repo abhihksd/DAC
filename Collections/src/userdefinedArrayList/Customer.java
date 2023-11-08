@@ -38,10 +38,29 @@ public class Customer implements Serializable {
 	}
 	@Override
 	public String toString() {
-		return "Customer [name=" + name + ", email=" + email + ", phoneno=" + phoneno + "]";
+		return "Customer [name=" + name + ", email=" + email + ", phoneno=" + phoneno + " ";
 	}
 }
 class RegCust extends Customer{
 		int regno;
+		public RegCust()
+		{
+			super();
+			regno=0;
+			
+		}
+		public RegCust(String name, String email, double phoneno, int regno) {
+			super(name, email, phoneno);
+			this.regno = regno;
+		}
+		@Override
+		public String toString() {
+			// TODO Auto-generated method stub
+			return super.toString()+ regno+" ]";
+		}
+		
+		
+		
+		
 	
 }

@@ -3,7 +3,6 @@ import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.util.*;
 
-import userdefinedArrayList.Customer;
 public class CustomerDemo {
 
 	public static void main(String[] args) throws Exception {

@@ -4,6 +4,9 @@
 			constraint pk_tid primary key(tid)				
 );
 
+alter table trainer 
+add constraint cid_fk foreign key(cid) references course(cid) on update cascade;
+
 create table course (cid int primary key,
 		     	cnames varchar(20) unique not null,
 			fees float(6,2),
@@ -23,4 +26,40 @@ insert into course values(1,'c-programming',5000,40),
 			(4,'oracle',12000,80),
 			(5,'mongoDB',8000,50),
 			(6,'WP',20000,150);
+
+3. 
+
+update course
+set fees=fees+fees*0.08
+where cnames='wp';
+
+
+5. 
+update course
+set cid=7 
+where cnames='cpp';
+
+6. 
+select *
+    -> from course
+    -> where fees between 5000 and 12000;
+
+7. 
+
+8. 
+
+select cnames,min(fees) over (partition by fees) 'fees'
+from course
+limit 1;
+
+
+9.
+
+select *,max(sal) over(partition by trainer) 'maxsal' 
+from trainer;
+
+23. 
+select empno,ename,deptno,sum(sal) over (partiton by deptno) 'sum'
+from emp;
+
 

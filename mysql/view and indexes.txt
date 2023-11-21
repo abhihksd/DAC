@@ -1,0 +1,3 @@
+view and indexes
+
+create view emp_view 

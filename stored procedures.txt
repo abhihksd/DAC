@@ -1,0 +1,119 @@
+ drop procedure if exists find_fact;
+
+1.
+delimiter //
+create procedure find_avg()
+begin
+ select avg(sal)
+ from emp
+ where deptno=20;
+end //
+mysql>call find_avg();
+
+2.
+
+create procedure find_avg()
+begin
+ select avg(sal)
+ from emp
+ where deptno=20;
+end //
+delimiter ;
+
+mysql>call find_avg();
+
+3.
+
+delimiter bye
+create procedure find_ag(in no int)
+begin
+ select avg(sal)
+ from emp
+ where deptno=no;
+end bye
+delimiter ;
+
+mysql>cal find_ag(20);
+
+4. 
+delimiter bye
+create procedure find_fact(in no int)
+begin
+  declare fact int;
+  declare i int;
+  set fact=1;
+set i=1;
+  while i<=no do 
+   set fact=fact*i;
+   set i=i+1;
+  end while;
+  select fact;
+end bye
+delimiter ;
+
+5. 
+
+drop procedure isprime;
+delimiter //
+create procedure isprime(in no int)
+begin
+ declare i int;
+ declare flag int;
+ set flag=1;
+ set i=2;
+ while i<no
+ do 
+  if no%i=0 then
+    set flag=0;
+  end if;
+  set i=i+1;
+ end while;
+ select flag ;
+end //
+delimiter ;
+
+
+6. 
+drop procedure if exists ifempexists;
+delimiter //
+create procedure ifempexists(in emid int)
+begin
+ declare msg varchar(30);
+ declare cnt int;
+declare var int;
+---------------------------------------------------
+ set cnt = (select count(*) 
+            from emp
+           where empno=emid);
+--------------------OR-----------------------------
+select count(*) into var
+ from emp where exists(select empid from emp where empno=emid);
+----------------------------------------------------
+ if cnt=1 then 
+ set msg='Employee found';
+  else
+ set msg= 'Employee not found';
+end if;
+select msg;
+end //
+delimiter ;
+
+7. 
+drop procedure if exists setsal;
+delimiter //
+create procedure setsal(empid int,salary float(7,2))
+begin
+  update emp set sal=salary
+  where empno=empid;
+end //
+delimiter ; 
+
+8. 
+drop procedure if exists insert_emp;
+delimiter //
+create procedure insert_emp(empid int, name varchar(10), jb varchar(9),
+salary float(7,2))
+begin
+insert into emp(empno,ename,job,sal) values(empid,name,jb,salary);
+end //
+delimiter ;

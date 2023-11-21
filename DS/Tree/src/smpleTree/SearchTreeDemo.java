@@ -12,6 +12,7 @@ public class SearchTreeDemo {
 		bt.addNode(20);
 		bt.addNode(150);
 		bt.addNode(190);
+		
 		bt.display();
 		System.out.println("THe height is:"+bt.height(bt.root));
 		System.out.println(bt.search(2000));
@@ -22,6 +23,16 @@ public class SearchTreeDemo {
 		bt.delete(150);
 		bt.display();
 		System.out.println(bt.largest());
+		
+		BinaryTree br=new BinaryTree();
+		br.addNode(6);
+		br.addNode(2);
+		br.addNode(8);
+		br.addNode(1);
+		br.addNode(9);
+		
+		ValiDateBST valiDateBST=new ValiDateBST();
+	System.out.println(	valiDateBST.checkValidBST(br.root));
 	}
 
 }

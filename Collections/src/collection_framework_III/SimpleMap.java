@@ -17,10 +17,12 @@ public class SimpleMap {
 			public void accept(Integer t, String u) {
 				// TODO Auto-generated method stub
 				System.out.println(t+"-> "+u);
+			
 				
 			}
 			
 		});
 	}
+	
 
 }

@@ -1,0 +1,26 @@
+1. create table trainer(tid char(2),
+			tname varchar(20) not null,
+			cid int,
+			constraint pk_tid primary key(tid)				
+);
+
+create table course (cid int primary key,
+		     	cnames varchar(20) unique not null,
+			fees float(6,2),
+			duration time not null
+);
+
+2. insert into trainer(tid,tname,sal,cid) values('t1','smita',20000,1),
+				('t2','amit',25000,2),
+				('t3','rohan',28000,2),
+				('t4','archana',25000,3),
+				('t5','raj',30000,4),
+				('t6','rutuja',36000,6);
+
+insert into course values(1,'c-programming',5000,40),
+			(2,'cpp',8000,80),
+			(3,'core java',10000,100),
+			(4,'oracle',12000,80),
+			(5,'mongoDB',8000,50),
+			(6,'WP',20000,150);
+

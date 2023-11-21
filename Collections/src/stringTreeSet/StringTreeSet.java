@@ -23,7 +23,13 @@ public class StringTreeSet {
 				return diff;
 			}
 		});
-
+		words.add("this");
+		words.add("is");
+		words.add("a");
+		words.add("testof");
+		words.add("program");
+		System.out.println(words);
+		
 	}
 
 }

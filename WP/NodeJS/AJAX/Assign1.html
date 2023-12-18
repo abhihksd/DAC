@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function makeRequest()
+        {
+            ajax=createAjaxObject()
+            var url="http://localhost:9000/welcome?name="+document.getElementById("name").value
+            ajax.onreadystatechange=updatePage
+            ajax.open("GET",url,true)
+            ajax.send("")
+           
+        }
+        function updatePage()
+        {
+             //alert(ajax.readyState)  // this is to see the state number
+            if(ajax.readyState==4)
+            // alert(ajax.responseText) this shows the response text 
+        document.getElementById("result").innerHTML=ajax.responseText
+        }
+        function createAjaxObject()
+        {
+            // this is for the chrome browsers  
+            try{
+                var ajax=new XMLHttpRequest();
+                return ajax;
+            }
+            catch(e)
+            { //this is for IE edge browsers 
+                try{
+                    var ajax=new ActiveXObject("Microsoft.XMLHTTP")
+                    return ajax
+                }
+                catch(e)
+                {
+                    alert("ajax not supported")
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="text" name="name" id="name">
+        <input type="button" id="b1" value="CLICK" onclick="makeRequest()">
+
+    </form>
+    <div id="result"></div>
+</body>
+</html>

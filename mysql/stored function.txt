@@ -1,0 +1,75 @@
+Stored function	
+
+1. function to calc total sal
+set global log_bin_trust_function_creators=1;
+delimiter //
+create function cal_sal(msal float(7,2),mcomm float(7,2))
+returns float(7,2)
+begin 
+ declare x float(7,2);
+ set x= msal+ifnull(mcomm,0);
+ return x;
+end //
+delimiter ;
+
+ 
+mysql>select *,cal_sal(sal,comm)"total sal"
+    -> from emp;
+
+2.function that will generate email for employee
+
+delimiter //
+create function generate_email(mname varchar(10),mjob varchar(10))
+returns varchar(20)
+begin
+ declare mail varchar(20);
+ set mail=concat(upper(substr(mname,1,2)),
+		 lower(substr(mjob,-2,2)),
+		'@knowit.com');
+return mail;
+end //
+delimiter ;
+
+3. Write function calculate which calcualtes incrmented salary
+
+delimiter //
+create function cal_sal2(mjob varchar(10),msal decimal(7,2))
+returns decimal(7,2)
+begin 
+  declare sal decimal(7,2);
+  set sal=0;
+ if mjob='manager' then
+   set sal= msal+msal*0.05;
+ end if;
+ if mjob='clerk' then
+   set sal=msal+msal*0.07;
+ end if;
+ if mjob='analyst' then
+   set sal=msal+msal*0.1;
+ end if;
+ if mjob='salesman' then
+   set sal=sal;
+ end if;
+return sal;
+end //
+delimiter ;
+ 
+
+4. display string smith is clerk 
+
+delimiter // 
+create function show_string(mname varchar(10), mjob varchar(10))
+returns varchar(30)
+begin
+ return concat(mname,' is a ',mjob);
+end //
+delimiter ;
+
+
+
+
+
+
+
+
+

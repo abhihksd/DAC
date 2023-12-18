@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+        function arr(no)
+        {
+             arr=[10,20,30,40]
+            str=""
+            str+="<ul>"
+        for(i=0;i<no;i++){
+            arr[i]=prompt("Enter number")
+            str+="<li>"+arr[i]+"</li>"
+        } 
+        str+="</ul>"
+        document.getElementById("display").innerHTML="<br/>"+str;
+        }
+
+        function search(no)
+        {
+                var ind=arr.indexOf(no)
+               document.getElementById("index").innerHTML="Element found on: "+ind+" index.";
+        }
+
+
+
+        function usingforeach()
+        {
+            str="<ul>"
+            for(i in arr)
+
+            str+="<li>"+arr[i]+"</li>"
+        str+="</ul>"
+        document.getElementById("foreachdisplay").innerHTML=str
+        }
+        function mysort(a,b)
+        {
+            return a-b;
+        }
+        function sorting()
+        {
+            //arr.sort(mysort)   function name 
+            //arr.sort(function(a,b){return b-a})  annonymous function
+            arr.sort((a,b)=> a-b)    //arraw function
+            document.getElementById("sorted").innerHTML="Sorted array is: "+arr.toString()
+        }
+        
+        function arrayfunctions()
+        {
+            arr1=[10,23,30,40,45,2,31]
+            sum1=arr1.reduce((s,v)=>s+v)
+            avg=sum1/arr1.length
+            max=arr1.reduce((s,v)=>s>v?s:v)
+            min=arr1.reduce((s,v)=>s>v?v:s)
+            str="the sum is:"+sum1
+            str+="<br/> avg:"+avg
+            str+="<br/> max:"+max
+            str+="<br/> min:"+min
+
+            odd=arr1.reduce((v)=>v%2==0)
+            str+="<br/> odd:"+odd
+
+            even=arr1.filter((v)=>v%2!=0)
+            str+="<br/> even: "+even
+
+            var prime=arr1.filter((n)=>{
+                flag=true   
+            for(i=2;i<=parseInt(n/2);i++)
+            {
+                if(n%i==0)
+                flag=false
+                
+            }
+            if(flag)
+            return n
+            })
+            str+="<br/> prime: "+prime
+
+
+
+            document.getElementById("arrayfuncs").innerHTML=str
+            
+        }
+
+
+    </script>
+    </head>
+    <body>
+        <form>
+            <input type="text" name="num" placeholder="enter size of array">
+            <input type="button" value="enter" onclick="arr(num.value)">
+            <input type="text" name="s1" placeholder="enter element to find">
+            <input type="button" value="enter" onclick="search(s1.value)">
+            <input type="button" value="sort" onclick="sorting()">
+            <input type="button" value="foreach" onclick="usingforeach()">
+            <input type="button" value="function" onclick="arrayfunctions()">
+
+        </form>
+        <div id="display"></div>
+        <div id="index"></div>
+        <div id="sorted"></div>
+        <div id="foreachdisplay"></div>
+        <div id="arrayfuncs"></div>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function fun(n)
+        {
+            var str="";
+            for(let i=1;i<=n;i++)
+            {
+                for(let j=1;j<=i;j++)
+                {
+                    str+=j;
+                }
+                str+="<br/>"
+            }
+            document.getElementById("result").innerHTML=str;
+        }
+    </script>
+    
+
+    </script>
+</head>
+<body>
+   
+    <form >
+        <input type="text" name="num">
+        <input type="button" value="submit" onclick="fun(num.value)">
+    </form>
+    <div id="result"></div>
+    <br/>
+    <script src="script.js"></script>
+</body>
+</html>

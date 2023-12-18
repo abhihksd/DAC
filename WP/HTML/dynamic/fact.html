@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+         function factorial(n)
+        {
+            var fac=1
+            for(i=2;i<=n;i++)
+            {
+                fac*=i;
+            }
+            // document.write(fac)
+            document.getElementById("fact").innerHTML="factorial of: "+n+" is "+fac
+        }
+        function power(b,p)
+        {
+            res=1
+            for(i=1;i<=p;i++)
+            {
+                res=res*b
+            }
+            document.getElementById("powdisplay").innerHTML=b+" to the power of "+p+ " is "+res
+        }
+        function facttable(n)
+        {
+            var str="<table border='1' style='background-color: red;' >"
+                str+="<tr><th> Number</th> <th> Factorial</th></tr>"
+                fac=1
+            for(i=1;i<=n;i++)
+            {
+                fac=fac*i
+                str+="<tr>"
+                    str+="<td>"+i+"</td>"
+                    str+="<td>"+fac+"</td>"
+                str+="</tr>"   
+            }
+            str+="</table>"
+            document.getElementById("facttable").innerHTML=str
+        }
+        function pali(n)
+        {
+            temp=n
+            mod=1
+            num=0
+            while(n>0)
+            {
+                mod=n%10
+                n=parseInt(n/10)
+                num=num*10+mod
+            }
+            if(num==temp)
+            str=temp+" is a palindrome"
+        else
+        str=temp+" is not a palindrome"
+    document.getElementById("paldisplay").innerHTML=str
+        }
+
+    </script>
+    </head>
+    <body>
+        <h1>FACTORIAL</h1>
+        <form>
+            <table style="background-color: red; border: '2px solid black' ;">
+                <tr>
+                    <td>Enter Number</td>
+                    <td><input type="number" name="num" id></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Factorial"
+                            onclick="factorial(num.value)" /></td>
+                </tr>
+            </table>
+        </form>
+        <div style="padding-left: 50px;" id="fact"></div>
+        <h1>POWER</h1>
+        <form>
+            <table style="background-color: red; border: '2px solid black' ;">
+                <tr>
+                    <td>Enter Base Number</td>
+                    <td><input type="number" name="bnum" ></td>
+                </tr>
+                <tr>
+                    <td>Enter power number</td>
+                    <td><input type="number" name="pnum" ></td>
+
+                </tr>
+                <tr>
+                    <td><input type="button" value="Power"
+                            onclick="power(bnum.value,pnum.value)" /></td>
+                    <td></td>
+                </tr>
+            </table>
+            <div id="powdisplay"></div>
+        </form>
+
+        <h1>FACTORIAL TABLE</h1>
+        <form>
+            <input type="number" id="numm">
+            <input type="button" value="FACTORIAL TABLE" onclick="facttable(numm.value)">
+        </form>
+        <div id="facttable"></div>
+
+        <h1>PALINDROME</h1>
+        <form>
+            <table style="background-color: red; border: '2px solid black' ;">
+                <tr>
+                    <td>Enter Number</td>
+                    <td><input type="number" name="num" id></td>
+                </tr>
+                <tr>
+                    <td><input type="button" value="Palindrome"
+                            onclick="pali(num.value)" /></td>
+                </tr>
+            </table>
+        </form>
+        <div style="padding-left: 50px;" id="paldisplay"></div>
+
+
+    </body>
+</html>

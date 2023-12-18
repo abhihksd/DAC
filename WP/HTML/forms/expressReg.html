@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+        header h1{
+            color: red;
+        }
+        input, textarea
+        { 
+            background-color: rgb(216, 237, 246);
+
+        }
+        label
+        {
+            color: gray;
+        }
+        
+    </style>
+
+<script>
+    
+</script>
+
+        <title>Document</title>
+    </head>
+    <body >
+        <header><h1>Express Registration</h1>
+            <h2>All fields with (*) are required</h2>
+        </header>
+        <div>
+            <form action="">
+            <table  id="main_table" style="border-collapse: collapse;">
+                <tr>
+                    <th style="background-color: lightgray;">Personal Details</th>
+                    <th style="background-color: lightgray;">Addresses</th>
+                </tr>
+                <tr>
+                    <td>
+                        <table >
+                            <tr>
+                                <td><label for="title">Title:</label></td>
+                                <td><input type="text" name="title" id="title"><br>
+                                    (Mr./Mrs./Miss)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label for="fname">FirstName</label></td>
+                                <td>*<input type="text" name="fname" id="fname"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="lname">LastName</label></td>
+                                <td>*<input type="text" name="lname" id="lname"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="email">Email</label></td>
+                                <td>*<input type="email" name="email" id="email"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="cellphone">CellPhone</label></td>
+                                <td>*<input type="number" name="cellphone" id="cellphone"></td>
+                            </tr>
+
+                        </table>
+                    </td>
+                    <td>
+                        <table>
+                            <tr>
+                                <td><label for="">Address:</label></td>
+                                <td><input type="text" name="" id="address1"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">Town:</label></td>
+                                <td><input type="text"></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">County/State:</label></td>
+                                <td><select name="country" id="">
+                                    <option value="US">US</option>
+                                    <option value="INDIA">INDIA</option>
+                                </select></td>
+                            </tr>
+                            <tr>
+                                <td><label for="">PostCode:</label></td>
+                                <td><input type="text" name="" id=""></td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr >
+                    <td colspan="2" style="display: inline;"><label for="comment">Comment</label><textarea name="comment" id="comment" cols="30" rows="10"></textarea></td>
+                    
+                </tr>
+                <tr>
+                    <td><label for="feedback">feedback</label><input type="text" name="" id=""></td>
+                    <td><label for="">Hear about us from?</label>
+                    <input type="checkbox" name="f" id="chkbox">friend
+                    <input type="checkbox" name="so" id="chkbox">Site Owner <br>
+                    <input type="checkbox" name="se" id="chkbox">Search Enginer
+                </tr>
+                <tr>
+                    <td colspan="2"style="background-color: lightgray;">security details</td>
+                </tr>
+                <tr>
+                    <td><label for="pass">Choose password</label>
+                    *<input type="password" name="pass" id="pass"></td>
+                    <td><label for="cpass">Confirm Password</label>
+                    * <input type="text" name="cpass" id="cpass"></td>
+                    
+                </tr>
+            </table>
+        <input type="submit" value="">
+        </form>
+    </div>
+    </body>
+</html>

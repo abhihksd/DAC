@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        arr=["../mypictures/array.png","../mypictures/PaFN.gif","../mypictures/sunset.jpeg","../mypictures/train-47997.png",]
+        var index=0
+        function prev()
+        {   index--;
+            if(index<0)
+            index=arr.length-1
+            document.getElementById("slideshow").src=arr[index]
+        }
+        function next()
+        {
+            index++;
+            if(index>=arr.length)
+            index=0
+            document.getElementById("slideshow").src=arr[index]
+        }
+        
+    </script>
+</head>
+<body>
+    <img src="../mypictures/array.png" alt="" id="slideshow" height="500px" width="500px">
+    <button type="button" onclick="prev()">PREVIOUS</button>
+    <button type="button" onclick="next()">NEXT</button>
+    <script>
+        setInterval(next,1000);
+    </script>
+</body>
+</html>

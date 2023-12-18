@@ -1,0 +1,40 @@
+	delimiter //
+	create procedure discount()
+	begin
+	declare mpid int;
+	declare mname varchar(20);
+	declare mprice decimal(6,2);
+	declare mqty int;
+
+	declare dis_price decimal(6,2);
+
+	declare flag int default 0;
+
+	declare dis_cur cursor
+	for select pid,pname,price,qty from myproduct;
+
+	declare continue handler
+	for not found set flag=1;
+
+	open dis_cur;
+
+	lab1 : loop
+	 fetch dis_cur into mpid,mname,mprice,mqty;
+	 if mprice>5000 then 
+		set dis_price= mprice+mprice*0.1;
+	 elseif mprice>1000 && mprice <=5000 then
+		set dis_price= mprice+mprice*0.07;
+	 else 
+	   set dis_price= mprice+mprice*0.03;
+	end if;   
+	if flag=1 then
+	 leave lab1;
+	end if;
+
+	select mpid,mname,mprice,mqty,dis_price;
+	end loop lab1;
+	close dis_cur;
+	end //
+	
+	
+	

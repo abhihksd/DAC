@@ -1,0 +1,15 @@
+1. What is data structure ? and types of data structure
+2. Explain linked list and explain logic for inserting node at nth position.
+3. Explain Working of doubly linked list. and deleting node at nth position.
+4. What is Tree data structure ? and application of Tree data structure.
+5. Explain logic for delete node from Binary Search Tree.
+6. Explain types of Tree.
+7. Explain AVL Tree and it's rotation.
+8. Explain Traversal methods of Tree.
+9. Explain Traversal  methods of Graph.
+10.Explain working of Quick Sort.
+11.What is searching ? and types of searching.
+12.How to merge  two linked list.
+13.Explain working of merge sort.
+14 Explain Hashing.
+15 collision resolution techniques.

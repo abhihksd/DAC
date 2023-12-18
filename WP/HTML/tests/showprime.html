@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showPrime()
+        {
+            var str="<ul>"
+            var flag=true
+            for(i=11;i<99;i++)
+            {
+                flag=true
+                for(j=2;j<parseInt(i/2);j++)
+                {
+                    if(i%j==0)
+                        flag=false   
+                }
+                if(flag)
+                    str+="<li>"+i+"</li>"
+            }
+            str+="</ul>"
+            document.getElementById("primes").innerHTML=str
+        }
+    </script>
+</head>
+<body>
+    <input type="button" value="Show Primes" onclick="showPrime()"/>
+    <div id="primes"></div>
+</body>
+</html>

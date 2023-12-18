@@ -1,0 +1,16 @@
+body
+{
+    background-color: pink;
+}
+#syllabus
+{
+    border: "1";
+}
+p
+{
+    margin-left: 50px;
+    background-color: white;
+    color: red;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font: 12px Verdana, Geneva, Tahoma, sans-serif;
+}

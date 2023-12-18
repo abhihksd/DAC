@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            alert("PAge loaded")
+            $("#hide").click(function(){
+                $("#image").hide(3000);
+            })
+            $("#show").click(function(){
+                $("#image").hide(3000)
+            })
+            $("#toggle").click(function(){
+                $("#image").toggle(2000)
+            })
+        })
+    </script>
+</head>
+<body>
+    <img src="sunset.jpeg" alt="" id="image">
+    <button id="hide">HIDE</button>
+    <button id="show">SHOW</button>
+    <button id="toggle">TOGGLE</button>
+</body>
+</html>

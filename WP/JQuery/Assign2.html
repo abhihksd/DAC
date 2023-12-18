@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("img").mousedown(function () {
+          $(this).fadeOut("slow");
+          $(this).fadeIn("slow");
+        });
+        $("img").mouseup(function () {
+          $(this).fadeIn("slow");
+        });
+        $("a").click(function(){
+            $(this).next().slideToggle("fast")
+             
+        })
+
+      });
+    </script> 
+    <!-- node -v npm -v -->
+  </head>
+  <body>
+    <table style="border: 5px solid red">
+      <tr>
+        <td> 
+          <img src="jqueryEffects/1.jpg" alt="" />
+          <a href="#">specification</a>
+          <div id="specs" style="display: none;">
+            <p>RAM</p>
+            <p>Front cAm</p>
+            <p>BACK cam</p>
+            <p>STORAGE</p>
+            
+          </div>
+        </td>
+        <td><img src="jqueryEffects/2.jpg" alt="" /><a href="#">specification</a>
+            <div id="specs" style="display: none;">
+              <p>RAM</p>
+              <p>Front cAm</p>
+              <p>BACK cam</p>
+              <p>STORAGE</p>
+              
+            </div></td>
+        <td><img src="jqueryEffects/3.jpg" alt="" /><a href="#">specification</a>
+            <div id="specs" style="display: none;">
+              <p>RAM</p>
+              <p>Front cAm</p>
+              <p>BACK cam</p>
+              <p>STORAGE</p>
+              
+            </div></td>
+      </tr>
+      <tr>
+        <td><img src="jqueryEffects/4.jpg" alt="" /><a href="#">specification</a>
+          <div id="specs" style="display: none;">
+            <p>RAM</p>
+            <p>Front cAm</p>
+            <p>BACK cam</p>
+            <p>STORAGE</p>
+            
+          </div></td>
+        <td><img src="jqueryEffects/5.jpg" alt="" /><a href="#">specification</a>
+          <div id="specs" style="display: none;">
+            <p>RAM</p>
+            <p>Front cAm</p>
+            <p>BACK cam</p>
+            <p>STORAGE</p>
+            
+          </div></td>
+        <td><img src="jqueryEffects/6.jpg" alt="" /><a href="#">specification</a>
+          <div id="specs" style="display: none;">
+            <p>RAM</p>
+            <p>Front cAm</p>
+            <p>BACK cam</p>
+            <p>STORAGE</p>
+            
+          </div></td>
+      </tr>
+      <tr>
+        <td><img src="jqueryEffects/1.jpg" alt="" /><a href="#">specification</a>
+          <div id="specs" style="display: none;">
+            <p>RAM</p>
+            <p>Front cAm</p>
+            <p>BACK cam</p>
+            <p>STORAGE</p>
+            
+          </div></td>
+        <td><img src="jqueryEffects/2.jpg" alt="" /><a href="#">specification</a>
+          <div id="specs" style="display: none;">
+            <p>RAM</p>
+            <p>Front cAm</p>
+            <p>BACK cam</p>
+            <p>STORAGE</p>
+            
+          </div></td>
+        <td><img src="jqueryEffects/3.jpg" alt="" /><a href="#">specification</a>
+          <div id="specs" style="display: none;">
+            <p>RAM</p>
+            <p>Front cAm</p>
+            <p>BACK cam</p>
+            <p>STORAGE</p>
+            
+          </div></td>
+      </tr>
+    </table>
+  </body>
+</html>

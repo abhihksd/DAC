@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+            function validate()
+            {
+                var doc_fields=document.getElementsByTagName("input")
+                var username=doc_fields[0].value
+                    
+                var pass=doc_fields[1].value
+
+                var uidpattern=/^[a-zA-Z.]{5,15}$/
+                var passpattern=/(?=.*[0-9])(?=.*[!@#$%^&])[A-Za-z0-9!@#$%^&*]{5,}$/
+
+                if(!uidpattern.test(username))
+                {
+                    document.getElementById("uiderr").innerHTML="not valid"
+                }
+                else{
+                    document.getElementById("uiderr").innerHTML=""   
+                }
+
+                if(!passpattern.test(pass))
+                {
+                    document.getElementById("passerr").innerHTML="not valid"
+                }
+                else{
+                    document.getElementById("passerr").innerHTML=""   
+                }
+
+            }
+        </script>
+    </head>
+    <body>
+        <form id="login">
+            <table>
+                <tr>
+                    <td> <label for="uid">UID:</label></td>
+                    <td style="display: inline;"><input type="text" id="uid"><p id="uiderr" style="color: red;"></p></td>
+                </tr>
+                <tr>
+                    <td><label for="pwd">PWD:</label></td>
+                    <td><input type="input" name="pwd" id="pwd"><p id="passerr" style="color: red;"></p></td>
+                </tr>
+                <tr>
+                    <td> <button type="button" onclick="validate()" >Submit</button></td>
+                    <td><input type="reset"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

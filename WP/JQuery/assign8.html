@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("img.thumb").click(function(){
+               var newsrc= $(this).attr("src")
+                $("#BIG").attr("src",newsrc)
+            })
+        })
+    </script>
+  </head>
+  <body>
+    <img id="BIG" src="jqueryEffects/1.jpg" alt="" style="height: 400px; width: 400px" />
+    <div>
+      <table style="border: 2px solid black;">
+        <tr>
+          <td style="border: 2px solid black;"><img class="thumb" src="jqueryEffects/2.jpg" alt="" /></td>
+          <td style="border: 2px solid black;"><img class="thumb" src="jqueryEffects/1.jpg" alt=""/></td>
+          <td style="border: 2px solid black;"><img class="thumb" src="jqueryEffects/3.jpg" alt="" /></td>
+          <td style="border: 2px solid black;"><img class="thumb" src="jqueryEffects/4.jpg" alt="" /></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>

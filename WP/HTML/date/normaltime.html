@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        
+        function stopwatch()
+        {
+           
+         const cdate=new Date()
+            str=""
+        
+        hh=cdate.getHours()
+        mm=cdate.getMinutes()
+        ss=cdate.getSeconds()
+        
+        
+            str=hh+":"+mm+":"+ss
+            if(ss<10)
+            str=+hh+":"+mm+":0"+ss
+            if(mm<10)
+            str=hh+":0"+mm+":"+ss
+            if(hh<10)
+            str="0"+hh+":0"+mm+":"+ss
+        document.getElementById("stop").innerHTML=str
+        }
+    </script>
+</head>
+<body>
+    <div  style="margin-left: 50%;" id="stop">
+    <hr></hr></div>
+    <script>stopwatch()
+    setInterval(stopwatch,1000)
+     </script>
+
+    
+</body>
+</html>

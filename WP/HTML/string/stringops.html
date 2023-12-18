@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>String operations</title>
+    <script>
+        function stringfuns()
+        {
+            str="this is a sentence"
+        var len=str.length
+        str1=""
+        str1+=len
+        str1+=str.toUpperCase()+"<br/>" 
+        str1+=str.toLowerCase()+"<br/>" 
+        document.getElementById("result").innerHTML=str1
+        }
+
+    </script>
+
+</head>
+<body>
+    <button onclick="stringfuns()">Start</button>
+    <div id="result"></div>
+</body>
+</html>

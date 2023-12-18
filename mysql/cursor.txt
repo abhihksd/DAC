@@ -1,0 +1,144 @@
+coursor
+
+1. write a simple cursor to display each row of emp table;
+
+delimiter //
+create procedure check_cur()
+begin
+declare mjob varchar(5);
+declare mename varchar(10);
+declare mempno int;
+declare msal float(7,2);
+
+declare cur cursor
+for select empno,ename,job,sal from emp;
+open cur;
+fetch cur into mempno,mename,mjob,msal;
+select mempno,mename,mjob,msal;
+close cur;
+end //
+delimiter ;
+
+-------------------------------------------------
+-------------------print everyone-----------------
+delimiter //
+create procedure check_cur1()
+begin
+ declare mjob varchar(9);
+ declare mename varchar(10);
+ declare mempno int;
+ declare msal float(7,2);
+ declare flag int default 0;
+ 
+ declare cur cursor 
+ for select empno,ename,sal,job from emp;
+ 
+ declare continue handler for not found set flag=1;
+ 
+ open cur;
+ 
+ y:loop
+  fetch cur into mempno,mename,msal,mjob;
+  if flag=1 then
+   leave y;
+   end if;
+   select mempno,mename,msal,mjob;
+   end loop y;
+   close cur;
+   end //
+
+
+
+
+mysql> call check_cur();
+
+
+2. for table myproduct(pid,pname,qty,price) write a procedure which will give discount 
+if price>5000 discount is 10%
+if pricce>1000 and price<=5000 then discount is 7%
+otherwise discount is 3%
+ display pid, pname,qty, price, discount price;
+
+
+	delimiter //
+	create procedure discount()
+	begin
+	declare mpid int;
+	declare mname varchar(20);
+	declare mprice decimal(6,2);
+	declare mqty int;
+
+	declare dis_price decimal(6,2);
+
+	declare flag int default 0;
+
+	declare dis_cur cursor
+	for select pid,pname,price,qty from myproduct;
+
+	declare continue handler
+	for not found set flag=1;
+
+	open dis_cur;
+
+	lab1 : loop
+	 fetch dis_cur into mpid,mname,mprice,mqty;
+	 if mprice>5000 then 
+		set dis_price= mprice+mprice*0.1;
+	 elseif mprice>1000 && mprice <=5000 then
+		set dis_price= mprice+mprice*0.07;
+	 else 
+	   set dis_price= mprice+mprice*0.03;
+	end if;   
+	if flag=1 then
+	 leave lab1;
+	end if;
+
+	select mpid,mname,mprice,mqty,dis_price;
+	end loop lab1;
+	close dis_cur;
+	end //
+	
+	
+	
+
+lab1:loop
+ fetch dis_cur into mpid,mname,mprice,mqty;
+ if mprice>5000 then 
+    set dis_price= mprice+mprice*0.1;
+
+ else if mprice>1000 and mprice <=5000 then
+    set dis_price= mprice+mprice*0.07;
+ else 
+   set dis_price= mprice+mprice*0.03;
+if flag=1 then
+ leave lab1;
+end if;
+
+select mpid,mname,mprice,mqty,dis_price;
+end loop lab1;
+close dis_cur;
+end //
+
+
+3. write procedure to increment sal of employee 
+manager-5%
+clerk-10%
+analyst-7%;
+
+use cursor;;
+
+
+create procedure cal
+
+
+
+
+
+
+
+
+
+
+
+
+

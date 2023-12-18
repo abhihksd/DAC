@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+          $("button").click(function(){
+              $("header").slideToggle("fast")
+              var str=$(this).text()
+              if(str=="Slide UP")
+                $(this).text("Slide DOWN")
+                else
+                    $(this).text("Slide UP")
+          })
+      })
+    </script>
+  </head>
+  <body>
+    <header style="background-color: brown; height: 400px; margin: 0"></header>
+    <button style="margin-left: 50%">Slide UP</button>
+  </body>
+</html>

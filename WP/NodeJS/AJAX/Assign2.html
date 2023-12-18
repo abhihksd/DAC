@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("#b1").click(function () {
+          var url = "http://localhost:9000/getemp?empid=" + $("#empid").val();
+          $.get(url, function (data, status) {
+            if (status == "success") $("#result").html(data);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" name="empid" id="empid" />
+      <input type="button" id="b1" value="CLICK" />
+    </form>
+    <div id="result"></div>
+  </body>
+</html>

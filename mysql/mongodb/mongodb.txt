@@ -1,0 +1,45 @@
+1. display all movies with rating=4
+
+db.movie.find({rating:4}).pretty()
+
+2. display movies with rating 3 and price 200
+
+db.movie.find({rating:3,price:200}).pretty()
+
+3. rating>3 and price =540 
+db.movie.find({rating:{$gt:3},price:{$gt:200}}).pretty()
+
+4. rating >3 and price>300
+db.movie.find({rating:{$gt:3},price:{$gt:300}}).pretty()
+
+5. price>200 and price<400
+db.movie.find({price:{$gt:200},price:{$lt:400}}).pretty()
+
+6. price=200 or price 540 400
+
+db.movie.find({$or:[{price:200},{price:{$in:[540,400]}}]}).pretty().count()
+
+7. price not 200 not 540 not 400
+db.movie.find({ price : {$nin:[200,540,400]}}).pretty();
+
+8. 7but just count
+db.movie.find({ price : {$nin:[200,540,400]}}).pretty().count()
+
+9. 
+db.movie.find({$or:[{rating:4},{price:{$gt:300}}]})
+
+10. 
+price not>200 and <400
+
+db.movie.find({price:{$nin:[400,200]}}).pretty().count()
+
+11. rating: odd 
+db.movie.find({rating:{$mod:[2,1]}}).pretty()
+
+12. with name:amithabh
+
+db.movie.find({actor:'amitabh'}).pretty()
+
+13. 
+db.movie.find({actor:'amitabh'}).sort({price:1}).pretty()
+

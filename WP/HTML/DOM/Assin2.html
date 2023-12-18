@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function queryselector()
+        {
+            var elements=document.body.children
+           str="<ul>"
+                //str=elements.length
+            for(i=0;i<elements.length;i++)
+            {
+                if(elements[i].node)
+               str+="<li>"+ elements[i].nodeName+elements[i].innerHTML+"</li>"
+            }
+            str+="</ul>"
+            document.getElementById("result").innerHTML=str
+        }
+    </script>
+</head>
+<body name="body">
+    <h1>this is the heading</h1>
+    <p>This is the text file</p>
+    <a href="#">This is a link</a>
+    <button onclick="queryselector()">Start</button>
+    <div id="result"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function replace() {
+        var linode = document.getElementsByTagName("li");
+         for(i=0;i<linode.length;i++)
+         {
+            var newimg=document.createElement("img")
+            newimg.setAttribute("src",linode[i].innerText+".jpg");
+            linode[i].replaceChild(newimg,linode[i].firstChild)
+         }
+        // var arr_img = [
+        //   "DOM_MAN/browser.jpg",
+        //   "DOM_MAN/desktop.jpg",
+        //   "DOM_MAN/folder.jpg",
+        //   "DOM_MAN/browser.jopg",
+        //   "DOM_MAN/desktop.jpg"
+        // ];
+        // for(i=0;i<linode.length;i++)
+        // {
+        //     var chgele=document.createElement("img")
+        //     linode[i].replaceChild()
+        // }
+      }
+    </script>
+  </head>
+  <body>
+    <ul id="UL1">
+      <li>Desktop</li>
+      <li>My Computer</li>
+      <li>Folder</li>
+      <li>Browser</li>
+      <li>Word Document</li>
+      <button onclick="replace()">Replace</button>
+    </ul>
+  </body>
+</html>

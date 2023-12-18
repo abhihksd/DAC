@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+    <script src="jquery-3.7.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        console.log("ready");
+        $("#uid").on("blur", function () {
+          url = "http://localhost:9000/checkid";
+          uid = $("#uid").val();
+          $.post(url, { uid: uid }, function (data, status) {
+            var str = "";
+            if (status == "success") {
+              var user = JSON.parse(data);
+              if (user.length == 0) {
+                
+                str = "userid available";
+              } else {str = "User EXISTS";
+              
+            }
+            }
+            $("#check").html(str);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" name="uid" id="uid" />
+      <p id="check"></p>
+      <input type="text" name="pwd" id="pwd" />
+      <input type="button" name="lgnb1" id="lgnb1" value="login" />
+    </form>
+  </body>
+</html>

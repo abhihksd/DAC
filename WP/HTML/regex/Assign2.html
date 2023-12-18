@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate()
+        {
+        var email=document.getElementById("email").value
+        var r1=document.getElementById("yes")
+        var r2=document.getElementById("no")
+        console.log(r1+""+r2)
+        emailpattern=/^[A-Za-z]{1}\w{2,}@[A-Za-z]{4,10}\.[a-z]{2,3}/
+        if(r1=="")
+        {
+            console.log("r1 not selected")
+        }
+        if(!emailpattern.test(email))
+        {
+            document.getElementById("emailerr").innerHTML="not valid"
+        } else{
+                    document.getElementById("emailerr").innerHTML="" 
+        }
+    }
+    </script>
+</head>
+<body>
+    <form id="f1">
+        <table border="1" style="border-collapse: collapse;">
+            <tr>
+            <th colspan="2" align="left">
+                VISITOR INFORMATION
+            </th></tr>
+            <tr>
+                <td>Email Address:</td>
+                <td ><input type="text" name="email" id="email" /><p style="color: red;" id="emailerr"></p></td>
+            </tr>
+            <tr>
+                <td><label >What do you use web for:</label></td>
+                <td><input type="checkbox" id="webchk1"/>Research
+                    <input type="checkbox" id="webchk2"/>Purchase</td>
+            </tr>
+            <tr>
+                <td><label >Occupation:</label></td>
+                <td><select name="dropdown" >
+                    <option value="programmer">programmer</option>
+                    <option value="admin">admin</option>
+                    <option value="salesman">saleman</option>
+                </select></td>
+            </tr>
+            <tr>
+                <td><label >What us to send you junk mail?</label></td>
+                <td><input type="radio" name="junk1" id="yes" />Absolutely
+                    <input type="radio" name="junk1" id="no" />Yes,I am dumb
+                <p id="junkerr"></p></td>
+            </tr>
+            <tr>
+                <td align="right"><input type="button" value="submit" onclick="validate()"></td>
+                <td  ><input type="reset" value="reset"></td>
+            </tr>
+        </table>    
+    </form>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      function start() {
+        var imgmode=document.getElementById("flyingimg")
+        var l=parseInt(imgmode.style.left)+20
+        if(l>window.innerWidth)
+        l=100
+        imgmode.style.left=l+"px"
+        flag=setTimeout(function(){start()},200)
+      }
+      function stop() {
+        clearTimeout(flag)
+        var imgnode=document.getElementById("flyingimg")
+        imgnode.style.position="absoulte"
+        imgnode.style.left="100px"
+        imgnode.style.top="100px"
+      }
+    </script>
+  </head>   
+  <body>
+    
+      <img id="flyingimg"
+        src="../mypictures/running.gif" width="100px" height="100px"
+        style="position: absolute; top: 100px; left: 100px"
+        onclick="start()"
+        onmouseover="stop()"
+      />
+  </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+        function isEven(n)
+        {
+            if(n%2==0)
+            str="even"
+            else
+            str="odd"
+        document.getElementById("result").innerHTML=str;
+        }
+        function isPrime(n)
+        {
+            flag=true   
+            for(i=2;i<=parseInt(n/2);i++)
+            {
+                if(n%i==0)
+                flag=false
+            }
+            
+            document.getElementById("result").innerHTML=+flag
+        }
+        function factorial(n)
+        {
+            var fac=1
+            for(i=2;i<=n;i++)
+            {
+                fac*=i;
+            }
+            // document.write(fac)
+            document.getElementById("fact").innerHTML=alert(fac)
+            document.getElementById("fact").innerHTML=fac
+        }
+    </script>
+    </head>
+    <body>
+        <div>
+            <h1 id="result"></h1>
+            <h1 id="fact"></h1>
+        </div>
+
+        <form>
+            <table>
+                <tr>
+                    <td> <input type="number" id="num"></td>
+                </tr>
+                <tr>
+                    <td> <input type="button" value="EVENORODD"
+                            onclick="isEven(num.value)"></td>
+                    <td> <input type="button" value="PRIME"
+                            onclick="isPrime(num.value)"></td>
+                    <td> <input type="button" value="FACTORIAL"
+                            onclick="factorial(num.value)"></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

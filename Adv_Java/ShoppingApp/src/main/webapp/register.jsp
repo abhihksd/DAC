@@ -9,7 +9,7 @@
 <body>
 <form action="register" method="post">
 		Enter u_id: <input type="text" name="u_id"  /> <br/>
-		Enter password: <input type="text" name="password" /><br/>
+		Enter password: <input type="text" name="password"  /><br/>
 		Enter fname: <input type="text" name="fname" /><br/>
 		Enter mname: <input type="text" name="mname" /><br/>
 		Enter lname: <input type="text" name="lname" /><br/>
